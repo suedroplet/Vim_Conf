@@ -179,26 +179,3 @@ call plug#end()
 "augroup filetypedetec"t
   "au! BufRead,BufNewFile *.m,*.oct set filetype=octave
 "augroup END
-
-
-" Auto add header 
-autocmd BufNewFile *.py,*.c,*.cpp exec ":call SetTitle()"
-let $author_name = "Johnny Au"
-let $author_email = "suedroplet@gmail.com"
-
-func SetTitle()
-    if &filetype == 'python'
-        call setline(1,"#!/usr/bin/env python3")
-		call setline(2,"# -*- coding: utf-8 -*-")
-        call setline(3, "\# Author: ".$author_name)
-        call setline(4, "\# Mail: ".$author_email)
-        call setline(5, "\# Created Time: ".strftime("%c"))
-    endif
-    if (&filetype == 'c' || &filetype == 'cpp')
-        call setline(1, "\@Author: ".$author_name)
-        call setline(2, "\@File Name: ".expand("%"))
-        call setline(3, "\@Mail: ".$author_email)
-        call setline(4, "\@Created Time : ".strftime("%c"))
-    endif
-endfunc
-
