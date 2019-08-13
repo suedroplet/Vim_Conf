@@ -1,2 +1,2 @@
-# Vim_Conf
-Python + Vim 打造轻量级编辑器。
+# Vim
+个人 vim 配置。
